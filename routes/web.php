@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/','ProductController@getHomePageProducts')->name('home');
 
 Route::get('shop','ProductController@getProducts')->name('shop');
@@ -69,3 +72,5 @@ Route::prefix('admin')->group(function () {
 
 });
 Auth::routes();
+
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
