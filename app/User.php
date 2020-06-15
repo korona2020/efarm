@@ -52,4 +52,14 @@ class User extends Authenticatable
         return $this->hasMany('\App\Address');
     }
 
+    public function checkRole()
+    {
+        if($this->role->name == 'administrator')
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
