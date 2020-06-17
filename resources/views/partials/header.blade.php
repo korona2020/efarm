@@ -5,14 +5,24 @@
                 <div class="row d-flex">
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+ 1235 2355 98</span>
+                        <span class="text">+355 68 54 33 123</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
                         <span class="text">youremail@email.com</span>
                     </div>
                     <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                        <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+                        <a href="https://api.whatsapp.com/send?phone=355685433123" data-toggle="tooltip" data-placement="bottom" title="">
+                            <img src="{{asset('images/socialmedia/wapp.ico')}}" alt="" >
+                        </a>
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"></div>
+                        <a href="https://www.instagram.com/zere_farm" data-toggle="tooltip" data-placement="bottom" title="">
+                            <img src="{{asset('images/socialmedia/fb.ico')}}" alt="">
+                        </a>
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"></div>
+                        <a href="https://www.instagram.com/zere_farm" data-toggle="tooltip" data-placement="bottom" title="">
+                            <img src="{{asset('images/socialmedia/insta.ico')}}" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -21,7 +31,14 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">Vegefoods</a>
+        @auth
+            <a class="navbar-brand" href="{{route('admin.home') }}">ZereFarm</a>
+        @endauth
+        @guest
+            <a class="navbar-brand" href="{{route('home') }}">ZereFarm</a>
+        @endauth
+
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
