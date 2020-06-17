@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/mdb.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
@@ -29,7 +29,7 @@
         </div>
         <div class="menu">
             <div class="logo">
-                <a href="{{route('welcome')}}">ZereFarm</a>
+                <a href="">ZereFarm</a>
             </div>
             <div class="right_menu">
                 <ul>
@@ -45,7 +45,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                 </form>
                             </div>
@@ -71,7 +71,7 @@
 
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="{{route('home')}}" class="active">
+                        <a href="{{route('admin.home')}}" class="active">
                             <span class="icon"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                             <span class="title">Dashboard</span>
                         </a>
@@ -106,13 +106,13 @@
                         </a>
                         <ul class="collapse list-unstyled" id="productsSubmenu">
                             <li>
-                                <a href="{{route('products.index')}}">
+                                <a href="">
                                     <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
                                     <span class="title">All Products</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('products.create')}}">
+                                <a href="">
                                     <span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <span class="title">Add Product</span>
                                 </a>
