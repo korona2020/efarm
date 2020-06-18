@@ -14,11 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/','ProductController@getHomePageProducts')->name('home');
 
-Route::get('shop','ProductController@getProducts')->name('shop');
-
-Route::get('cart','ProductController@getCart')->name('cart');
 
 Route::get('address',function () {
     return view('address');
@@ -29,14 +25,6 @@ Route::get('address/{id}','AddressController@get')->name('address.get');
 Route::post('address','AddressController@store')->name('address.store');
 
 Route::post('addressupdate','AddressController@update')->name('address.update');
-
-Route::get('product/{id}','ProductController@getSingleProduct')->name('product');
-
-Route::get('product/category/{id}','ProductController@getProductsByCategory')->name('category.products');
-
-Route::get('product/addToCart/{id}','ProductController@addToCart')->name('product.addToCart');
-
-Route::get('product/removeFromCart/{id}','ProductController@removeFromCart')->name('product.removeFromCart');
 
 Route::get('/checkout', function () {
     return view('checkout');
@@ -72,7 +60,22 @@ Route::prefix('admin')->group(function () {
 
 });
 Auth::routes();
-
+//done
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 Route::resource('/users','UsersController');
 Route::resource('/categories','CategoriesController');
+
+
+Route::get('/','ProductController@getHomePageProducts')->name('home');
+
+Route::get('shop','ProductController@getProducts')->name('shop');
+
+Route::get('cart','ProductController@getCart')->name('cart');
+
+Route::get('product/{id}','ProductController@getSingleProduct')->name('product');
+
+Route::get('product/category/{id}','ProductController@getProductsByCategory')->name('category.products');
+
+Route::get('product/addToCart/{id}','ProductController@addToCart')->name('product.addToCart');
+
+Route::get('product/removeFromCart/{id}','ProductController@removeFromCart')->name('product.removeFromCart');

@@ -29,7 +29,7 @@
         </div>
         <div class="menu">
             <div class="logo">
-                <a href="">ZereFarm</a>
+                <a href="{{route('home')}}">ZereFarm</a>
             </div>
             <div class="right_menu">
                 <ul>

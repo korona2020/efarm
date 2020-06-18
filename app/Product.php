@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class Product extends Model
 {
-    public function category() {
-        return $this->belongsTo('\App\Category');
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public static function getProductsById($ids) {

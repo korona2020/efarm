@@ -12,32 +12,17 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $category = new Category([
-            'id' => 1,
-            'name' => 'vegetables'
+        Category::create([
+            'name'=>'Fruta & Perime'
         ]);
-        $category->timestamps = false;
-        $category->save();
-
-        $category = new Category([
-            'id' => 2,
-            'name' => 'fruits'
+        Category::create([
+            'name'=>'Gliko & Recel'
         ]);
-        $category->timestamps = false;
-        $category->save();
-
-        $category = new Category([
-            'id' => 3,
-            'name' => 'juices'
+        Category::create([
+            'name'=>'Mish'
         ]);
-        $category->timestamps = false;
-        $category->save();
-
-        $category = new Category([
-            'id' => 4,
-            'name' => 'dried'
+        Category::create([
+            'name'=>'Bulmet'
         ]);
-        $category->timestamps = false;
-        $category->save();
     }
 }
