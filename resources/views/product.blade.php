@@ -94,7 +94,7 @@
             <h2 class="mb-4">Related Products</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
-        </div>   		
+        </div>
     	</div>
     	<div class="container">
     		<div class="row">
@@ -152,7 +152,7 @@
       </div>
     </section>
 	@include('partials.footer')
-  
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -164,19 +164,19 @@
 
 		var quantitiy=0;
 		   $('.quantity-right-plus').click(function(e){
-		        
+
 		        // Stop acting like a button
 		        e.preventDefault();
 		        // Get the field name
 		        var quantity = parseInt($('#quantity').val());
-		        
+
 		        // If is not undefined
-		            
+
 		            $('#quantity').val(quantity + 1);
 
-		          
+
 		            // Increment
-		        
+
 		    });
 
 		     $('.quantity-left-minus').click(function(e){
@@ -184,15 +184,15 @@
 		        e.preventDefault();
 		        // Get the field name
 		        var quantity = parseInt($('#quantity').val());
-		        
+
 		        // If is not undefined
-		      
+
 		            // Increment
 		            if(quantity>0){
 		            $('#quantity').val(quantity - 1);
 		            }
 		    });
-		    
+
 		});
 	</script>
   @endsection

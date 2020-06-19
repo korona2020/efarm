@@ -17,7 +17,7 @@
       </div>
     </div>
 
-	@if($products != null)
+	@if($products->count() > 0)
     <section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
@@ -37,13 +37,13 @@
 						    <tbody>
 							  @foreach($products as $product)
 							  <tr class="text-center">
-								  <td class="product-remove"><a href="{{ route('product.removeFromCart',['id'=> $product->id]) }}"><span class="ion-ios-close"></span></a></td>
+								  <td class="product-remove"><a href="{{route('product.removeFromCart',$product->rowId)}}"><span class="ion-ios-close"></span></a></td>
 
-								  <td class="image-prod"><div class="img" style="background-image:url('{{ asset('images/'.$product->image) }}');"></div></td>
+								  <td class="image-prod"><div class="img" style="background-image:url('{{ asset('images/'.$product->model->image) }}');"></div></td>
 
 								  <td class="product-name">
 									  <h3>{{ $product->name }}</h3>
-									  <p>{{ $product->description }}</p>
+									  <p>{{$product->model->description}}</p>
 								  </td>
 
 								  <td class="price">${{ $product->price }}</td>
@@ -54,7 +54,7 @@
 									  </div>
 								  </td>
 
-								  <td class="total">${{ $product->price }}</td>
+								  <td class="total">${{ $product->price * $product->qty }}</td>
 							  </tr><!-- END TR-->
 							  @endforeach
 						    </tbody>
@@ -62,7 +62,8 @@
 					  </div>
     			</div>
     		</div>
-    		<div class="row justify-content-end">
+
+    		<!--<div class="row justify-content-end">
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Coupon Code</h3>
@@ -102,32 +103,34 @@
     					<h3>Cart Totals</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>${{ $totalPrice }}.00</span>
+    						<span>$.00</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
-    						<span>${{ \App\BillingInfo::DELIVERY }}.00</span>
+    						<span>$.00</span>
     					</p>
 						<p class="d-flex">
 							<span>Tax</span>
-							<span>${{ \App\BillingInfo::TAX }}.00</span>
+							<span>$.00</span>
 						</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>${{ ($totalPrice+\App\BillingInfo::DELIVERY+\App\BillingInfo::TAX) }}</span>
+    						<span></span>
     					</p>
     				</div>
     				<p>
-					<form id="logout-form" action="{{ route('createPaymentRequest') }}" method="POST">
-						{{ csrf_field() }}
-						<input type="hidden" name="id" value="{{ Auth::user()->getId() }}">
+					<form id="logout-form" action="" method="POST">
+
+						<input type="hidden" name="id" value="">
 						<button type="submit" class="btn btn-primary py-3 px-4">Proceed to Checkout</button>
 					</form>
-					</p>
+
     			</div>
-    		</div>
+    		</div>-->
+
 			</div>
+
 		</section>
 	@else
 		<div class="hero-wrap hero-bread">
@@ -168,40 +171,4 @@
 
 @section('scripts')
 
-  <script>
-		$(document).ready(function(){
-
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
 @endsection

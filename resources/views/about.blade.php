@@ -54,7 +54,7 @@
         </div>
       </div>
     </section>
-		
+
 		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('{{ asset('images/bg_3.jpg') }}');">
     	<div class="container">
     		<div class="row justify-content-center py-5">
@@ -97,7 +97,7 @@
         </div>
     	</div>
     </section>
-		
+
 		<section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -198,7 +198,7 @@
                 <h3 class="heading">Free Shipping</h3>
                 <span>On order over $100</span>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services mb-md-0 mb-4">
@@ -209,7 +209,7 @@
                 <h3 class="heading">Always Fresh</h3>
                 <span>Product well package</span>
               </div>
-            </div>    
+            </div>
           </div>
           <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services mb-md-0 mb-4">
@@ -220,7 +220,7 @@
                 <h3 class="heading">Superior Quality</h3>
                 <span>Quality Products</span>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services mb-md-0 mb-4">
@@ -231,7 +231,7 @@
                 <h3 class="heading">Support</h3>
                 <span>24/7 Support</span>
               </div>
-            </div>      
+            </div>
           </div>
         </div>
 			</div>

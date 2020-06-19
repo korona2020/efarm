@@ -2,19 +2,26 @@
 
 namespace App;
 
+use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
-class Product extends Model
+
+class Product extends Model implements Buyable
 {
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public static function getProductsById($ids) {
-        $string = implode(",",$ids);
-        $results = DB::select( DB::raw("SELECT * FROM products WHERE id IN (".$string).")" );
-        return $results;
-
+    public function getBuyableIdentifier($options = null) {
+        return $this->id;
     }
+
+    public function getBuyableDescription($options = null) {
+        return $this->name;
+    }
+
+    public function getBuyablePrice($options = null) {
+        return $this->price;
+    }
+
 }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('address',function () {
+/*Route::get('address',function () {
     return view('address');
 })->name('user.address');
 
@@ -28,7 +28,7 @@ Route::post('addressupdate','AddressController@update')->name('address.update');
 
 Route::get('/checkout', function () {
     return view('checkout');
-})->name('checkout');
+})->name('checkout');*/
 
 Route::get('/contact', function () {
     return view('contact');
@@ -38,11 +38,11 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::post('checkout','PaymentController@createRequest')->name('createPaymentRequest');
+//Route::post('checkout','PaymentController@createRequest')->name('createPaymentRequest');
 
-Route::get('redirect/payment/','PaymentController@getAcknowledgement')->name('payment.successful');
+//Route::get('redirect/payment/','PaymentController@getAcknowledgement')->name('payment.successful');
 
-Route::prefix('admin')->group(function () {
+/*Route::prefix('admin')->group(function () {
 
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
@@ -58,24 +58,24 @@ Route::prefix('admin')->group(function () {
 
     Route::post('logout', 'AdminLoginController@logout')->name('admin.auth.logout');
 
-});
+});*/
 Auth::routes();
 //done
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 Route::resource('/users','UsersController');
 Route::resource('/categories','CategoriesController');
 
+Route::get('/','ProductsController@index')->name('home');
+Route::get('shop','ProductsController@shop')->name('shop');
+Route::get('product/category/{id}','ProductsController@getProductsByCategory')->name('category.products');
+Route::get('product/addToCart/{id}','CartController@addToCart')->name('product.addToCart');
+Route::get('product/removeFromCart/{id}','CartController@removeFromCart')->name('product.removeFromCart');
+Route::get('cart','CartController@getCart')->name('cart');
 
-Route::get('/','ProductController@getHomePageProducts')->name('home');
-
-Route::get('shop','ProductController@getProducts')->name('shop');
-
-Route::get('cart','ProductController@getCart')->name('cart');
+/*
 
 Route::get('product/{id}','ProductController@getSingleProduct')->name('product');
 
-Route::get('product/category/{id}','ProductController@getProductsByCategory')->name('category.products');
-
 Route::get('product/addToCart/{id}','ProductController@addToCart')->name('product.addToCart');
 
-Route::get('product/removeFromCart/{id}','ProductController@removeFromCart')->name('product.removeFromCart');
+*/
