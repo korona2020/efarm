@@ -12,8 +12,14 @@ class CartController extends Controller
     public function addToCart($id)
     {
         $product = Product::findOrFail($id);
-        Cart::add($product, 1);
+        $item = Cart::add($product, 1);
 
+        //update price of item if has discount
+        if($product->discount != 0)
+        {
+            $discount_price = $item->price - ($item->price*($product->discount/100));
+            Cart::update($item->rowId,['price'=> $discount_price]);
+        }
         return redirect()->back();
 
     }
@@ -26,7 +32,10 @@ class CartController extends Controller
     public function getCart()
     {
         return view('cart')
-            ->with('products',Cart::content())
-            ->with('total',Cart::total());
+            ->with('products', Cart::content())
+            ->with('total', Cart::total())
+            ->with('subtotal', Cart::subtotal());
     }
+
+
 }

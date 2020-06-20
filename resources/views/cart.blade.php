@@ -46,15 +46,17 @@
 									  <p>{{$product->model->description}}</p>
 								  </td>
 
-								  <td class="price">${{ $product->price }}</td>
+								    <td class="price">{{ $product->price }} LEKE</td>
 
 								  <td class="quantity">
 									  <div class="input-group mb-3">
-										  <input type="text" name="quantity" class="quantity form-control input-number" value="{{ $product->qty }}" min="1" max="100">
-									  </div>
+
+										    <input type="text" name="quantity" id="updateqty" class="quantity form-control input-number" value="{{ $product->qty }}" onfocusout="updateQty({{$product->rowId}})" min="1" max="100">
+
+                                      </div>
 								  </td>
 
-								  <td class="total">${{ $product->price * $product->qty }}</td>
+								  <td class="total">{{ $product->price * $product->qty }} LEKE</td>
 							  </tr><!-- END TR-->
 							  @endforeach
 						    </tbody>
@@ -63,17 +65,17 @@
     			</div>
     		</div>
 
-    		<!--<div class="row justify-content-end">
-    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    		<div class="row justify-content-end">
+    			<!--<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Coupon Code</h3>
     					<p>Enter your coupon code if you have one</p>
   						<form action="#" class="info">
-	              <div class="form-group">
-	              	<label for="">Coupon code</label>
-	                <input type="text" class="form-control text-left px-3" placeholder="">
-	              </div>
-	            </form>
+                          <div class="form-group">
+                            <label for="">Coupon code</label>
+                            <input type="text" class="form-control text-left px-3" placeholder="">
+                          </div>
+                        </form>
     				</div>
     				<p><a href="checkout.blade.php" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
     			</div>
@@ -97,26 +99,26 @@
 	            </form>
     				</div>
     				<p><a href="checkout.blade.php" class="btn btn-primary py-3 px-4">Estimate</a></p>
-    			</div>
+    			</div>-->
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Cart Totals</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$.00</span>
+    						<span>{{$subtotal}} LEKE</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
-    						<span>$.00</span>
+    						<span>0.00 LEKE</span>
     					</p>
 						<p class="d-flex">
 							<span>Tax</span>
-							<span>$.00</span>
+							<span>0.00 LEKE</span>
 						</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span></span>
+    						<span>{{$subtotal}} LEKE</span>
     					</p>
     				</div>
     				<p>
@@ -127,12 +129,14 @@
 					</form>
 
     			</div>
-    		</div>-->
+    		</div>
 
 			</div>
 
 		</section>
 	@else
+
+
 		<div class="hero-wrap hero-bread">
 			<div class="container">
 				<div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -144,7 +148,7 @@
 			</div>
 		</div>
 	@endif
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+    <!--<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
@@ -161,7 +165,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 	@include('partials.footer')
 
   <!-- loader -->
@@ -170,5 +174,11 @@
 @endsection
 
 @section('scripts')
-
+<script>
+    function updateQty(id)
+    {
+        let x = document.getElementById('updateqty')
+        form.action = '/categories/' + id
+    }
+</script>
 @endsection
