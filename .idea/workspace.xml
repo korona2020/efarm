@@ -33,9 +33,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c8dc59d-0b98-4c85-9745-9356bc4f7027" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +65,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -130,7 +135,6 @@
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
@@ -169,6 +173,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dDtgKiP4cIPpsnU12Ie10Wr0Cm" />
@@ -180,23 +185,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/socialmedia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\efarm\resources\views" />
-      <recent name="C:\xampp\htdocs\efarm\resources\views\products" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\efarm\resources" />
+      <recent name="C:\xampp\htdocs\efarm" />
       <recent name="C:\xampp\htdocs\efarm\public\images\socialmedia" />
       <recent name="C:\xampp\htdocs\efarm\resources\views\partials" />
       <recent name="C:\xampp\htdocs\efarm\resources\views\administrator" />
-      <recent name="C:\xampp\htdocs\efarm\public\css" />
-      <recent name="C:\xampp\htdocs\efarm\public\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\efarm\resources\views" />
+      <recent name="C:\xampp\htdocs\efarm\resources\views\products" />
     </key>
   </component>
   <component name="RunManager">
@@ -246,7 +252,9 @@
       <workItem from="1592383781189" duration="12551000" />
       <workItem from="1592472361934" duration="9612000" />
       <workItem from="1592554213446" duration="19469000" />
-      <workItem from="1592640024391" duration="8638000" />
+      <workItem from="1592640024391" duration="8823000" />
+      <workItem from="1592817919364" duration="4852000" />
+      <workItem from="1592826728977" duration="4955000" />
     </task>
     <servers />
   </component>
@@ -295,13 +303,17 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/1680.-63.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1591971822701" />
+    <state x="649" y="418" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592826868009">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="649" y="418" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.-63.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1592826868009" />
     <state x="1680" y="-63" width="1234" height="691" key="dock-window-1" timestamp="1592210799359">
       <screen x="1680" y="-63" width="1680" height="1010" />
     </state>
     <state x="1680" y="-63" width="1234" height="691" key="dock-window-1/1680.-63.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1592210799359" />
-    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1592400839576">
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1592825447378">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/1680.-63.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1592400839576" />
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/1680.-63.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1592825447378" />
   </component>
 </project>

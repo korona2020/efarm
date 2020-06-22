@@ -51,7 +51,7 @@
 								  <td class="quantity">
 									  <div class="input-group mb-3">
 
-										    <input type="text" name="quantity" id="updateqty" class="quantity form-control input-number" value="{{ $product->qty }}" onfocusout="updateQty({{$product->rowId}})" min="1" max="100">
+										    <input type="text" data-id="{{$product->rowId}}" name="quantity" id="updateqty" class="quantity form-control input-number" value="{{ $product->qty }}"  min="1" max="100">
 
                                       </div>
 								  </td>
@@ -174,11 +174,28 @@
 @endsection
 
 @section('scripts')
+    <script src="{{asset('js/app.js')}}"></script>
 <script>
-    function updateQty(id)
+    $(document).ready(function()
     {
-        let x = document.getElementById('updateqty')
-        form.action = '/categories/' + id
-    }
+        const className = document.querySelectorAll('.quantity')
+
+        Array.from(className).forEach(function(element){
+            element.addEventListener('change',function(){
+
+                const id = element.getAttribute('data-id')
+
+                axios.patch('/cart/${id}', {
+                    quantity: this.value,
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            })
+        })
+    });
 </script>
 @endsection

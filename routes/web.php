@@ -71,6 +71,7 @@ Route::get('product/category/{id}','ProductsController@getProductsByCategory')->
 Route::get('product/addToCart/{id}','CartController@addToCart')->name('product.addToCart');
 Route::get('product/removeFromCart/{id}','CartController@removeFromCart')->name('product.removeFromCart');
 Route::get('cart','CartController@getCart')->name('cart');
+Route::patch('cart/{product}','CartController@updateQty')->name('cart.updateqty');
 
 /*
 

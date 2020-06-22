@@ -31,4 +31,5 @@ class ProductsController extends Controller
             ->with('selectedCategory',$id);
     }
 
+
 }
