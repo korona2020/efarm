@@ -37,9 +37,10 @@ class CartController extends Controller
             ->with('subtotal', Cart::subtotal());
     }
 
-    public function updateQty(Request $request, $product)
+    public function updateQty(Request $request, $id)
     {
-        return $request->all();
+        Cart::update($id,$request->quantity);
+        return redirect()->back();
     }
 
 

@@ -35,7 +35,9 @@
 						      </tr>
 						    </thead>
 						    <tbody>
+
 							  @foreach($products as $product)
+
 							  <tr class="text-center">
 								  <td class="product-remove"><a href="{{route('product.removeFromCart',$product->rowId)}}"><span class="ion-ios-close"></span></a></td>
 
@@ -49,11 +51,13 @@
 								    <td class="price">{{ $product->price }} LEKE</td>
 
 								  <td class="quantity">
+                                      {!! Form::open(['method'=>'PUT' ,'route'=>['cart.updateqty',$product->rowId]]) !!}
 									  <div class="input-group mb-3">
-
-										    <input type="text" data-id="{{$product->rowId}}" name="quantity" id="updateqty" class="quantity form-control input-number" value="{{ $product->qty }}"  min="1" max="100">
-
+                                            <input type="hidden" name="proID" value="{{$product->id}}">
+										    <input type="text"  name="quantity" id="updateqty" class="quantity form-control input-number" value="{{ $product->qty }}"  min="1" max="100">
+                                            {!! Form::submit('✓',['class'=>'btn btn-success']) !!}
                                       </div>
+                                      {!! Form::close() !!}
 								  </td>
 
 								  <td class="total">{{ $product->price * $product->qty }} LEKE</td>
@@ -176,26 +180,6 @@
 @section('scripts')
     <script src="{{asset('js/app.js')}}"></script>
 <script>
-    $(document).ready(function()
-    {
-        const className = document.querySelectorAll('.quantity')
 
-        Array.from(className).forEach(function(element){
-            element.addEventListener('change',function(){
-
-                const id = element.getAttribute('data-id')
-
-                axios.patch('/cart/${id}', {
-                    quantity: this.value,
-                    })
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            })
-        })
-    });
 </script>
 @endsection
