@@ -60,7 +60,7 @@
                                       {!! Form::close() !!}
 								  </td>
 
-								  <td class="total">{{ $product->price * $product->qty }} LEKE</td>
+								  <td class="total">{{ $product->total }} LEKE</td>
 							  </tr><!-- END TR-->
 							  @endforeach
 						    </tbody>

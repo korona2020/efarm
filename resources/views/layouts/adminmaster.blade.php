@@ -106,13 +106,13 @@
                         </a>
                         <ul class="collapse list-unstyled" id="productsSubmenu">
                             <li>
-                                <a href="">
+                                <a href="{{route('mngproducts.index')}}">
                                     <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
                                     <span class="title">All Products</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{route('mngproducts.create')}}">
                                     <span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <span class="title">Add Product</span>
                                 </a>

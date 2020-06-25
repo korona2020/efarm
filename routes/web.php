@@ -42,28 +42,14 @@ Route::get('/about', function () {
 
 //Route::get('redirect/payment/','PaymentController@getAcknowledgement')->name('payment.successful');
 
-/*Route::prefix('admin')->group(function () {
 
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
-
-    Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
-
-    Route::get('register', 'AdminController@create')->name('admin.register');
-
-    Route::post('register', 'AdminController@store')->name('admin.register.store');
-
-    Route::get('login', 'AdminLoginController@login')->name('admin.auth.login');
-
-    Route::post('login', 'AdminLoginController@loginAdmin')->name('admin.auth.loginAdmin');
-
-    Route::post('logout', 'AdminLoginController@logout')->name('admin.auth.logout');
-
-});*/
 Auth::routes();
 //done
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 Route::resource('/users','UsersController');
 Route::resource('/categories','CategoriesController');
+Route::resource('/mngproducts','ProductsManagementController');
+
 
 Route::get('/','ProductsController@index')->name('home');
 Route::get('shop','ProductsController@shop')->name('shop');
